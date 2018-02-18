@@ -69,11 +69,51 @@ function onSuccess(position)
     }
 
 document.addEventListener("deviceready", onDeviceReady, false);
-
+var myid=0;
 var ref="";
+
+
+function setc(mname, mval)
+	{
+	console.log("set cookie:"+mname+"="+mval+";");
+	document.cookie=""+mname+"="+mval+";";
+	}
+
+
+function cc(mname)
+	{
+	var mycookies = document.cookie;
+	var mc= new Array();
+	mc=mycookies.split(";");
+	var found=false;
+	for (i=0;i<mc.length ;i++ )
+		{
+		mk=mc[i].split("=");
+		mk[0]=mk[0].replace(" ","");
+		if (mk[0]==mname)
+			{
+			found=true;
+			return mk[1];
+			}
+		}
+	if (found==false)
+		{
+		return "";
+		}
+	}
+
+
 function StartWebView()
 	{
-	var url='https://developer.design.ge/pubg/index.php?myid='+Math.random()*10000000;
+	if (document.cookie!="")
+		{
+		myid=cc("myid");
+		}
+	else
+		{
+		setc("myid",Math.random()*10000000);
+		}
+	var url='https://developer.design.ge/pubg/index.php?myid='+myid;
 	console.log(url);
 	ref = cordova.InAppBrowser.open(url, '_self', 'location=no, clearcache=yes');
 	}
