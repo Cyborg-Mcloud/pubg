@@ -115,7 +115,8 @@ function StartWebView()
 		}
 	var url='https://developer.design.ge/pubg/index.php?myid='+myid;
 	console.log(url);
-	ref = cordova.InAppBrowser.open(url, '_self', 'location=no, clearcache=yes');
+
+	window.location=url;
 	}
 
 
