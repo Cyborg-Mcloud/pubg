@@ -29,7 +29,7 @@ var MyAcc;
 
 function onDeviceReady() 
 	{
-
+	//screen.orientation.lock("portrait");
     document.removeEventListener('deviceready', onDeviceReady, false);
 
 	req_loc_acc();
@@ -45,12 +45,16 @@ function onDeviceReady()
     }
 
 
+
+window.addEventListener("compassneedscalibration",function(event) {
+    // ask user to wave device in a figure-eight motion  
+	console.log("wave ur device to calibrate");
+       event.preventDefault();
+}, true);
+
 function onSuccess(position) 
 	{
 	console.log("on GPS success");
-		
-
-	
 
 	MyLat=position.coords.latitude ;
 	MyLong=position.coords.longitude ;
