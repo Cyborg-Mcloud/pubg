@@ -3,8 +3,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.designge.pubg"
-	    versionCode="1" 
-        version   = "0.0.5"
+	    versionCode="2" 
+        version   = "0.0.6"
 		package="com.designge.pubg"
 		xmlns:android="http://schemas.android.com/apk/res/android">
     <name>PUBG Airsoft</name>
@@ -71,11 +71,11 @@
         <param name="ios-package" value="CDVNotification"/>
     </feature>
 
-<feature name="Geolocation">
-    <param name="ios-package" value="CDVLocation" />
-</feature>
+	<feature name="Geolocation">
+		<param name="ios-package" value="CDVLocation" />
+	</feature>
 
-		<gap:plugin name="cordova-plugin-fullscreen" source="npm" />
+	<gap:plugin name="cordova-plugin-fullscreen" source="npm" />
     <gap:plugin name="cordova-plugin-request-location-accuracy" source="npm" />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm"/>
     <gap:plugin name="cordova-plugin-powermanagement" source="npm"/>
@@ -87,17 +87,14 @@
 	<gap:plugin name="cordova-plugin-ionic-webview" source="npm"/>
 
 	<plugin name="cordova-plugin-vibration"  />
-	
-   <gap:plugin name="de.appplant.cordova.plugin.local-notification" source="npm" version="0.8.4"/>
+	<gap:plugin name="de.appplant.cordova.plugin.local-notification" source="npm" version="0.8.4"/>
 
-
-<plugin name="cordova.plugins.diagnostic" source="npm" />
-
+	<plugin name="cordova.plugins.diagnostic" source="npm" />
 	<plugin name="cordova-plugin-globalization" source="npm" />
 	<plugin name="cordova-plugin-dialogs" spec="^1.3.4"/>
 
-	<plugin name="cordova-android-support-gradle-release" spec="^1.1.1">
-    <variable name="ANDROID_SUPPORT_VERSION" value="26.0.1" />
+	<!--<plugin name="cordova-android-support-gradle-release" spec="^1.1.1">
+    <variable name="ANDROID_SUPPORT_VERSION" value="26.0.1" />-->
 </plugin>
 
 </widget>
